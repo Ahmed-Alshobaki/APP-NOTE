@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-
+import 'package:untitled1/auth/addnotes/widgets/showModalBottomSheet.dart';
+import 'package:awesome_dialog/awesome_dialog.dart';
+import 'package:dropdown_search/dropdown_search.dart';
 class addnote extends StatefulWidget {
   const addnote({super.key});
 
@@ -13,13 +15,14 @@ class _addnoteState extends State<addnote> {
     return Scaffold(
 
       floatingActionButton: FloatingActionButton(onPressed: () {
+        showModalBottomSheethome(context);
 
       },child: Icon(Icons.image),),
       appBar: AppBar(
         iconTheme: IconThemeData(
           color: Colors.white
         ),
-        title: Text("Add  note",style: TextStyle(color: Colors.white),),
+        title: Text("Add note",style: TextStyle(color: Colors.white),),
         backgroundColor: Colors.black,
 
       ),
@@ -94,9 +97,51 @@ class _addnoteState extends State<addnote> {
               ),
             ),
           ),
-          Container(height:50,width:100,child: TextButton(onPressed: (){}, child: const Text("Add note",style: TextStyle(color: Colors.white,fontWeight: FontWeight.w600),),style: TextButton.styleFrom(backgroundColor: Colors.black),))
-        ],),
+
+          Container(
+                height: 50,
+                width: 100,
+                margin: EdgeInsets.only(top:20 ),
+                child: TextButton(
+                  onPressed: () {
+                    AwesomeDialog(
+                        context: context,
+                        dialogType: DialogType.success,
+                        animType: AnimType.leftSlide,
+                        title: 'Dialog Title',
+                        desc: 'Dialog description here.............',
+                        btnCancelOnPress: () {},
+                    btnOkOnPress: () {},
+                    )..show();
+                  },
+                  child: const Text(
+                    "Add note",
+                    style: TextStyle(
+                        color: Colors.white, fontWeight: FontWeight.w600),
+                  ),
+                  style: TextButton.styleFrom(backgroundColor: Colors.black),
+                )),
+
+                  DropdownSearch<String>(
+                    popupProps: PopupProps.modalBottomSheet(
+                      showSelectedItems: true,
+                      disabledItemFn: (String s) => s.startsWith('I'),
+                    ),
+                    items: ["Brazil", "Italia (Disabled)", "Tunisia", 'Canada'],
+                    dropdownDecoratorProps: DropDownDecoratorProps(
+                      dropdownSearchDecoration: InputDecoration(
+                        labelText: "Menu mode",
+                        hintText: "country in menu mode",
+                      ),
+                    ),
+                    onChanged: print,
+                    selectedItem: "Brazil",
+                  ),
+
+
+          ],),
       ),
     );
   }
 }
+

@@ -35,6 +35,9 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
+  flutter_launcher_icons: ^0.13.1
+  flutter_native_splash: ^2.3.1
+
 
 dev_dependencies:
   flutter_test:
@@ -48,7 +51,32 @@ dev_dependencies:
   flutter_lints: ^2.0.0
   flutter_svg: ^2.0.7
   flutter_slidable: ^3.0.0
-
+  awesome_dialog: ^3.1.0
+  dropdown_search: ^5.0.6
+  flutter_launcher_icons: "^0.13.1"
+flutter_launcher_icons:
+    android: "launcher_icon"
+    ios: true
+    image_path: "assets/img_4.png"
+    min_sdk_android: 21 # android min sdk min:16, default 21
+    web:
+      generate: true
+      image_path: "assets/img.png"
+      background_color: "#hexcode"
+      theme_color: "#hexcode"
+    windows:
+      generate: true
+      image_path: "assets/img_4.png"
+      icon_size: 48 # min:48, max:256, default: 48
+    macos:
+      generate: true
+      image_path: "assets/img_4.png"
+flutter_native_splash:
+    color: "#42a5f5"
+    image: assets/img_4.png
+    ios: true
+    android_gravity: center
+    ios_content_mode: center
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
