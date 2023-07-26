@@ -19,7 +19,7 @@ class _addnoteState extends State<addnote> {
         iconTheme: IconThemeData(
           color: Colors.white
         ),
-        title: Text("Add  note",style: TextStyle(color: Colors.white),),
+        title: Text("Add note",style: TextStyle(color: Colors.white),),
         backgroundColor: Colors.black,
 
       ),
