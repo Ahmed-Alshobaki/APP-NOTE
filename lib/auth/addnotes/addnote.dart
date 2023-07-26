@@ -11,6 +11,7 @@ class _addnoteState extends State<addnote> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       floatingActionButton: FloatingActionButton(onPressed: () {
 
       },child: Icon(Icons.image),),
@@ -18,7 +19,7 @@ class _addnoteState extends State<addnote> {
         iconTheme: IconThemeData(
           color: Colors.white
         ),
-        title: Text("Add note",style: TextStyle(color: Colors.white),),
+        title: Text("Add  note",style: TextStyle(color: Colors.white),),
         backgroundColor: Colors.black,
 
       ),
