@@ -3,8 +3,16 @@ import 'package:flutter_svg/svg.dart';
 
 import '../../resources/routes.dart';
 
-class login extends StatelessWidget {
+class login extends StatefulWidget {
+
   const login({super.key});
+
+
+  @override
+  State<login> createState() => _loginState();
+}
+
+class _loginState extends State<login> {
 
   @override
   Widget build(BuildContext context) {
@@ -87,4 +95,10 @@ class login extends StatelessWidget {
       ),
     );
   }
+}
+Future getData ()async {
+Future.delayed(Duration(seconds: 3),(){
+  print("object");
+});
+
 }

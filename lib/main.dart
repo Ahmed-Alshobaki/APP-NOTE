@@ -12,6 +12,7 @@ void main() {
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
   runApp(
       myapp()
+
   );
 }
 
